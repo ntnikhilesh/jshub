@@ -164,7 +164,7 @@ console.log(nameChanger(name1));
 
 */
 
-
+/*
 
 
 var bio=
@@ -178,26 +178,7 @@ var bio=
 
 };
 
-//$("#header").append(bio.name);
-var formattedName=HTMLheaderName.replace("%data%",bio.name);
-$("#header").append(formattedName);
-
-var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
-$("#header").append(formattedRole);
-
-var formattedMobile=HTMLmobile.replace("%data%",bio.contcact_info);
-$("#header").append(formattedMobile);
-
-var formattedbioPic=HTMLbioPic.replace("%data%",bio.pic_url);
-$("#header").append(formattedbioPic);
-
-var formattedwelcomeMsg=HTMLwelcomeMsg.replace("%data%",bio.welcome_msg);
-$("#header").append(formattedwelcomeMsg);
-
-var formattedskills=HTMLskills.replace("%data%",bio.skills);
-$("#header").append(formattedskills);
-
-console.log(bio.role);
+*/
 
 /*
 
@@ -280,6 +261,13 @@ var work={
         "location":"Bengaluru",
         "dates":"Feb 2016 to Jan 2017",
         "description":"Was responsible for app testing, code comenting, UI design etc"
+    },
+    {
+        "employer":"Cognitiveclouds",
+        "title":"Frontend Developer",
+        "location":"Bengaluru",
+        "dates":"Feb 2017 to Future",
+        "description":"Learning JavaScript. Learning basics and JSON, DOM etc. Trying to crack Udacity JavaScript Course. Solving quiz and teting lot of basic things."
     }
     ]
 }
@@ -318,6 +306,74 @@ var mbio={
 }
 
 
+
+
+
+
+//Appending bio data
+
+//$("#header").append(bio.name);
+var formattedName=HTMLheaderName.replace("%data%",mbio.name);
+$("#header").append(formattedName);
+
+var formattedRole=HTMLheaderRole.replace("%data%",mbio.role);
+$("#header").append(formattedRole);
+
+var formattedMobile=HTMLmobile.replace("%data%",mbio.contcacts.mobile);
+$("#header").append(formattedMobile);
+
+var formattedEmail=HTMLemail.replace("%data%",mbio.contcacts.email);
+$("#header").append(formattedEmail);
+
+var formattedGithub=HTMLgithub.replace("%data%",mbio.contcacts.github);
+$("#header").append(formattedGithub);
+
+var formattedLocation=HTMLlocation.replace("%data%",mbio.contcacts.location);
+$("#header").append(formattedLocation);
+
+var formattedbioPic=HTMLbioPic.replace("%data%",mbio.biopic);
+$("#header").append(formattedbioPic);
+
+var formattedwelcomeMsg=HTMLwelcomeMsg.replace("%data%",mbio.welcome_msg);
+$("#header").append(formattedwelcomeMsg);
+
+//if statement quiz
+var formattedSkills;
+if(mbio.skills.length>0)
+{
+    $("#header").append(HTMLskillsStart);
+    for(i=0;i<mbio.skills.length;i++)
+    {
+    
+    formattedSkills=HTMLskills.replace("%data%",mbio.skills[i]);
+    $("#skills").append(formattedSkills);
+
+    }/*
+
+    ormattedSkills=HTMLskills.replace("%data%",mbio.skills[0]);
+    $("#skills").append(formattedSkills);
+
+    ormattedSkills=HTMLskills.replace("%data%",mbio.skills[0]);
+    $("#skills").append(formattedSkills);
+
+    ormattedSkills=HTMLskills.replace("%data%",mbio.skills[0]);
+    $("#skills").append(formattedSkills); 
+    console.log("We have skills");  */
+}
+//var formattedskills=HTMLskills.replace("%data%",mbio.skills);
+//$("#header").append(formattedskills);
+
+console.log(mbio.role);
+
+
+
+
+
+
+
+
+
+
 // education object
 
 
@@ -342,13 +398,110 @@ var education={
     ]
 }
 
+/*
+
+// Protecting resume
+
+var html = '<script src="http://hackyourwebsite.com/eviljavascript.js"></script>';
+
+var charEscape = function(_html) {
+    var newHTML = _html;
+    // How will you make sure that newHTML doesn't contain any < or > ?
+    // Your code goes here!
+
+newHTML=newHTML.replace(/</g,"");
+newHTML=newHTML.replace(/>/g,"");
+    // Don't delete this line!
+    return newHTML;
+};
+
+// Did your code work? The line below will tell you!
+console.log(charEscape(html));
+
+*/
+
+/*
+
+//Dot notation vs Bracket Notation 
+
+var weirdObject = {
+    "property": "Time for an astronomy lesson!",
+    "property1": "Cameron's minor in college was astronomy",
+    "property-2": "The 4 Galilean largest moons of Jupiter are:",
+    "property 3": "Io, Ganymede, Callisto, Europa",
+    "property$": "Saturn's moon Enceladus has liquid water ocean under its icy surface",
+    " property": "The Sun contains 99.87% of the mass of the entire solar system",
+    "property()": "There are 5 dwarf planets in our solar system:",
+    "property[]": "Pluto, Ceres, Eris, Haumea, Makemake",
+    "8property": "Mars has two tiny moons: Phobos and Deimos"
+};
+
+// Use console.log() to figure out if dot and/or bracket notation
+// will work to access the properties below. Mark true if you can use dot/bracket
+// notation to access the property, otherwise mark false.
+
+// For example, uncomment the line below to see if you can use dot notation to access `property1`.
+//console.log(weirdObject.8property);
+console.log(weirdObject["8property"]);
+
+
+// I'll give you the first answer. The rest are set to false. Try out each property and
+// if you can use dot or bracket notation to access it, change the answer to true!
+
+// property
+var dotNotation0 = true;
+var bracketNotation0 = true;
+
+// property1
+var dotNotation1 = true;
+var bracketNotation1 = true;
+
+// property-2
+var dotNotation2 = false;
+var bracketNotation2 = true;
+
+// property 3
+var dotNotation3 = false;
+var bracketNotation3 = true;
+
+// property$
+var dotNotation4 = true;
+var bracketNotation4 = true;
+
+// *space*property
+var dotNotation5 = false;
+var bracketNotation5 = true;
+
+// property()
+var dotNotation6 = false;
+var bracketNotation6 = true;
+
+// property[]
+var dotNotation7 = false;
+var bracketNotation7 = true;
+
+// 8property
+var dotNotation8 = false;
+var bracketNotation8 = true;
+
+*/
 
 
 
+//for-in loop quiz
 
-
-
-
-
-
-
+for(joblist in work.jobs)
+{
+    $("#workExperience").append(HTMLworkStart);
+    var formattedWorkEmployer=HTMLworkEmployer.replace("%data%",work.jobs[joblist].employer)
+    var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[joblist].title);
+    var formattedDates=HTMLworkDates.replace("%data%",work.jobs[joblist].dates);
+    var formattedDesc=HTMLworkDescription.replace("%data%",work.jobs[joblist].description);
+    var formattedEmployerTitle=formattedWorkEmployer+formattedTitle;
+    console.log(formattedEmployerTitle);
+    $(".work-entry:last").append(formattedEmployerTitle);
+    $(".work-entry:last").append(formattedDates);
+    $(".work-entry:last").append(formattedDesc);
+    
+    //$("#header").append(formattedWorkEmployer);
+}
