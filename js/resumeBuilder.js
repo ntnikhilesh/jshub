@@ -139,6 +139,7 @@ console.log(finalName);
 
 //Above exp
 
+/*
 var name1 = "AlbERt EINstEiN";
 
 function nameChanger(oldName) {
@@ -161,9 +162,126 @@ finalName=firstChar+fName+last_name;
 // Did your code work? The line below will tell you!
 console.log(nameChanger(name1));
 
+*/
 
 
 
+
+var bio=
+{
+	name:"Nikhil",
+	role:"Frontend Developer",
+	contcact_info:"+91 9453363771",
+	pic_url:"https://mapta.gs/map_image/image2016-11-10-05-33-0958240695c00164.51374152.png",
+	welcome_msg:"have a nice day",
+	skills:"C , Java , JavaScript"
+
+};
+
+//$("#header").append(bio.name);
+var formattedName=HTMLheaderName.replace("%data%",bio.name);
+$("#header").append(formattedName);
+
+var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
+$("#header").append(formattedRole);
+
+var formattedMobile=HTMLmobile.replace("%data%",bio.contcact_info);
+$("#header").append(formattedMobile);
+
+var formattedbioPic=HTMLbioPic.replace("%data%",bio.pic_url);
+$("#header").append(formattedbioPic);
+
+var formattedwelcomeMsg=HTMLwelcomeMsg.replace("%data%",bio.welcome_msg);
+$("#header").append(formattedwelcomeMsg);
+
+var formattedskills=HTMLskills.replace("%data%",bio.skills);
+$("#header").append(formattedskills);
+
+console.log(bio.role);
+
+/*
+
+//Dot and Bracket notaion
+
+var work={
+
+};
+
+work.current_job_position="Frontend Developer";
+work.employer="Cognitiveclouds";
+work.years_worked="Just got entry";
+work.city="Bengaluru";
+
+var formattedworkTile=HTMLworkTitle.replace("%data%",work.current_job_position);
+$("#header").append(formattedworkTile);
+/*
+var formattedEmployer=HTMLworkEmployer.replace("%data%",work.employer);
+$("#header").append(formattedEmployer);
+
+var formattedwork_start=HTMLworkStart.replace("%data%",work.years_worked);
+$("#header").append(formattedwork_start);
+
+var formattedcity=HTMLworkLocation.replace("%data%",work.city);
+$("#header").append(formattedcity);*/
+/*
+console.log(formattedworkTile);
+var education={
+
+};
+
+education["last_school"]="UNITED Allhabad";
+education["attend_year"]="2012-2015";
+education["school_city"]="Allahabad";
+
+var formattedschoolName=HTMLschoolName.replace("%data%",education["last_school"]);
+$("#header").append(formattedschoolName);
+/*
+var formattedschoolDates=HTMLschoolDates.replace("%data%",education["attend_year"]);
+$("#education").append(formattedschoolDates);
+
+var formattedschoolLocation=HTMLschoolLocation.replace("%data%",education["school_city"]);
+$("#education").append(formattedschoolLocation); 
+
+
+console.log(formattedschoolName); */
+
+
+
+
+//Validate JSON
+/*
+var education={
+    "schools":[
+    {
+    "name":"UNITED",
+    "city":"Allahabad",
+    "degree":"B.Tech",
+    "major":"CSE"
+    },
+    {
+    "name":"RRCITM",
+    "city":"Aligarh",
+    "degree":"Diploma",
+    "major":"IT"
+    }
+    ]
+}
+
+*/
+
+//Creating your education object
+
+{
+    "education":[
+    {
+        "schools":"UNITED",
+        "school_city":"Allahabad",
+        "major":"CSE",
+        "graduation_years":"2015",
+        "online_course":"NA"
+    }
+    ]
+}
 
 
 
