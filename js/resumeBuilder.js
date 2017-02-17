@@ -258,16 +258,16 @@ var work={
     {
         "employer":"Maptags",
         "title":"Android Developer",
-        "location":"Bengaluru",
+        "location":"https://www.google.co.in/maps/dir/''/''/@12.9403247,77.5518055,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3bae14467f27877f:0xcb2e37d776ee06a5!2m2!1d77.621846!2d12.940334",
         "dates":"Feb 2016 to Jan 2017",
         "description":"Was responsible for app testing, code comenting, UI design etc"
     },
     {
         "employer":"Cognitiveclouds",
         "title":"Frontend Developer",
-        "location":"Bengaluru",
+        "location":"https://www.google.co.in/maps/dir/''/''/@12.9105267,77.4791745,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3bae3fcfc7b7396b:0x8db2f50f20a999c6!2m2!1d77.549215!2d12.910536",
         "dates":"Feb 2017 to Future",
-        "description":"Learning JavaScript. Learning basics and JSON, DOM etc. Trying to crack Udacity JavaScript Course. Solving quiz and teting lot of basic things."
+        "description":"Getting the hang of js. Learning basics and JSON, DOM etc. Trying to crack Udacity JavaScript Course. Solving quiz and teting lot of basic things."
     }
     ]
 }
@@ -297,7 +297,7 @@ var mbio={
         "mobile":"+91 9453363771",
         "email":"nikhilesh.tripathi@cognitiveclouds.com",
         "github":"nikhil636",
-        "location":"Bengaluru"
+        "location":"https://www.google.co.in/maps/dir/12.9205759,77.6138742/12.9204911,77.6138716/@12.9195982,77.6118519,18z/data=!4m2!4m1!3e0"
 
     },
     
@@ -380,11 +380,28 @@ console.log(mbio.role);
 var education={
     "schools":[
     {
-        "name":"UNITED",
-        "location":"Allahabad",
+        "name":"United College of Engineering and Research,Naini , Allahabad",
+        "location":"https://www.google.co.in/maps/dir/''/''/@25.3431277,81.8401268,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3985497f84146b21:0xaca81f605417ff44!2m2!1d81.9101671!2d25.3431443",
         "degree_dates":"2012-2015",
+        "degree":"B.Tech",
         "url":"",
         "majors":["CSE"]
+    },
+    {
+        "name":"RRCITM ,Chandaus,Aligarh",
+        "location":"https://www.google.co.in/maps/dir/''/''/@25.3431277,81.8401268,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3985497f84146b21:0xaca81f605417ff44!2m2!1d81.9101671!2d25.3431443",
+        "degree_dates":"2009-2012",
+        "degree":"3 Year Diploma",
+        "url":"",
+        "majors":["IT"]
+    },
+    {
+        "name":"PRT Inter College, Rohi,Sant Ravidas Nagar",
+        "location":"https://www.google.co.in/maps/dir/''/''/@25.3431277,81.8401268,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3985497f84146b21:0xaca81f605417ff44!2m2!1d81.9101671!2d25.3431443",
+        "degree_dates":"2008-2009",
+        "degree":"10th",
+        "url":"",
+        "majors":["Mathematics"]
     }
     ],
 
@@ -397,6 +414,36 @@ var education={
     }
     ]
 }
+
+
+
+
+function displayEducation()
+{
+$("#education").append(HTMLschoolStart);
+for(i=0;i<education.schools.length;i++)
+{
+
+    
+    var formattedschoolName=HTMLschoolName.replace("%data%",education.schools[i].name);
+    $(".education-entry:last").append(formattedschoolName);
+    
+    var formattedschoolDegree=HTMLschoolDegree.replace("%data%",education.schools[i].degree);
+    $(".education-entry:last").append(formattedschoolDegree);
+    
+    var formattedschoolMajor=HTMLschoolMajor.replace("%data%",education.schools[i].majors);
+    $(".education-entry:last").append(formattedschoolMajor);
+    
+    var formattedschoolDates=HTMLschoolDates.replace("%data%",education.schools[i].degree_dates);
+    $(".education-entry:last").append(formattedschoolDates);
+    
+
+    }
+    //$("#header").append(formattedWorkEmployer);
+
+}
+
+displayEducation();
 
 /*
 
@@ -628,3 +675,20 @@ mprojects.display=function()
 //console.log(mprojects.projects[0].title);
 
 mprojects.display();
+
+/*
+
+//Independent Research
+
+//what does $(document).click() take as parameter
+
+$(document).click(function(loc)
+{console.log(loc.pageX,loc.pageY);
+
+});
+
+*/
+
+
+//Adding google map
+$("#mapDiv").append(googleMap);
