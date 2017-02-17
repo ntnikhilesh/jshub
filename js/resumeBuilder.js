@@ -279,7 +279,7 @@ var mprojects={
         "title":"Maptags app",
         "dates":"Feb 2016 to Jan 2017",
         "description":"Maptags is a smart address revolution Which convert long address into smart links Like my address is www.mapta.gs/nikhilesh  Maptags app helps to create Maptags",
-        "images":""
+        "images":"https://lh3.googleusercontent.com/IDisAR6gWKU6cCU3jdAR1F0dT4O6BbdOh-3St9aMCrvMLYk6A2SKdaqqixaiyBfBhw=h900-rw"
     }
     ]
 }
@@ -486,11 +486,10 @@ var bracketNotation8 = true;
 
 */
 
-
-
-//for-in loop quiz
-
-for(joblist in work.jobs)
+function displayWork()
+{
+    //for....in loops quiz
+    for(joblist in work.jobs)
 {
     $("#workExperience").append(HTMLworkStart);
     var formattedWorkEmployer=HTMLworkEmployer.replace("%data%",work.jobs[joblist].employer)
@@ -505,3 +504,127 @@ for(joblist in work.jobs)
     
     //$("#header").append(formattedWorkEmployer);
 }
+
+}
+
+displayWork();
+
+
+/*
+
+//Return Statement quiz
+//Return all locations
+
+var work = {
+  "jobs": [
+    {
+      "employer": "Udacity",
+      "title": "Course Developer",
+      "location": "Mountain View, CA",
+      "dates": "Feb 2014 - Current",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    },
+    {
+      "employer": "LearnBIG",
+      "title": "Software Engineer",
+      "location": "Seattle, WA",
+      "dates": "May 2013 - Jan 2014",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    },
+    {
+      "employer": "LEAD Academy Charter High School",
+      "title": "Science Teacher",
+      "location": "Nashville, TN",
+      "dates": "Jul 2012 - May 2013",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    },
+    {
+      "employer": "Stratford High School",
+      "title": "Science Teacher",
+      "location": "Nashville, TN",
+      "dates": "Jun 2009 - Jun 2012",
+      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    }
+  ]
+};
+
+// Your code goes here! Let me help you get started
+
+
+function locationizer(work_obj) {
+    //console.log(work_obj.jobs.length);
+    var location_array=[];
+    for(i=0;i<work_obj.jobs.length;i++)
+    {
+        location_array.push(work_obj.jobs[i].location);
+        //console.log(location_array);
+    }
+
+    return(location_array);
+
+}
+
+// Did locationizer() work? This line will tell you!
+console.log(locationizer(work));
+
+*/
+
+
+
+
+
+//The name game
+
+//$("#main").append(internationalizeButton);
+/*
+function inName(myname)
+{
+
+var finalName = myname;
+    
+    // Your code goes here!
+    var mname=finalName;
+var space_index=mname.indexOf(' ');
+var last_name=mname.slice(space_index+1,mname.length);
+last_name=last_name.toLocaleUpperCase();
+var firstChar=finalName.charAt(0).toUpperCase();
+var fName=finalName.slice(1,space_index+1);
+fName=fName.toLocaleLowerCase();
+fName=firstChar+fName;
+//finalName=firstChar+fName+last_name;
+    
+    // Don't delete this line!
+    return fName+" "+last_name;
+
+}
+
+
+console.log(inName("RaTan tATa"));
+
+*/
+
+
+
+//Encapsulation quiz
+mprojects.display=function()
+{
+
+    $("#projects").append(HTMLprojectStart);
+    for(i=0;i<mprojects.projects.length;i++)
+    {
+    var formattedpojectTitle=HTMLprojectTitle.replace("%data%",mprojects.projects[i].title);
+    $(".project-entry:last").append(formattedpojectTitle);
+
+    var formattedpojectDates=HTMLprojectDates.replace("%data%",mprojects.projects[i].dates);
+    $(".project-entry:last").append(formattedpojectDates);
+
+    var formattedpojectDesc=HTMLprojectDescription.replace("%data%",mprojects.projects[i].description);
+    $(".project-entry:last").append(formattedpojectDesc);
+
+    var formattedpojectImage=HTMLprojectImage.replace("%data%",mprojects.projects[i].images);
+    $(".project-entry:last").append(formattedpojectImage);
+}
+}
+//console.log(mprojects.projects[0].title);
+
+mprojects.display();
