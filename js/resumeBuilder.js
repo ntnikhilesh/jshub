@@ -173,7 +173,7 @@ var bio=
 	role:"Frontend Developer",
 	contcact_info:"+91 9453363771",
 	pic_url:"https://mapta.gs/map_image/image2016-11-10-05-33-0958240695c00164.51374152.png",
-	welcome_msg:"have a nice day",
+	welcome_msg:"Want to become tech bird",
 	skills:"C , Java , JavaScript"
 
 };
@@ -269,19 +269,82 @@ var education={
 
 */
 
-//Creating your education object
 
-{
-    "education":[
+//work object
+
+var work={
+    "jobs":[
     {
-        "schools":"UNITED",
-        "school_city":"Allahabad",
-        "major":"CSE",
-        "graduation_years":"2015",
-        "online_course":"NA"
+        "employer":"Maptags",
+        "title":"Android Developer",
+        "location":"Bengaluru",
+        "dates":"Feb 2016 to Jan 2017",
+        "description":"Was responsible for app testing, code comenting, UI design etc"
     }
     ]
 }
+
+
+var mprojects={
+    "projects":[
+    {
+        "title":"Maptags app",
+        "dates":"Feb 2016 to Jan 2017",
+        "description":"Maptags is a smart address revolution Which convert long address into smart links Like my address is www.mapta.gs/nikhilesh  Maptags app helps to create Maptags",
+        "images":""
+    }
+    ]
+}
+
+
+//bio object is on top
+
+var mbio={
+    "name":"Nikhil",
+    "role":"Frontend Developer",
+    "welcome_msg":"Want to become tech bird",
+    "biopic":"https://mapta.gs/map_image/image2016-11-10-05-33-0958240695c00164.51374152.png",
+    
+    "contcacts":{
+        "mobile":"+91 9453363771",
+        "email":"nikhilesh.tripathi@cognitiveclouds.com",
+        "github":"nikhil636",
+        "location":"Bengaluru"
+
+    },
+    
+    "skills":["C ", "Java" , "JavaScript"]
+
+}
+
+
+// education object
+
+
+var education={
+    "schools":[
+    {
+        "name":"UNITED",
+        "location":"Allahabad",
+        "degree_dates":"2012-2015",
+        "url":"",
+        "majors":["CSE"]
+    }
+    ],
+
+    "onlineCourses":[
+    {
+        "title":"JAVA Course",
+        "school":"UNITED",
+        "dates":"May 2014-June 2014 and May 2015-June 2015",
+        "url":""
+    }
+    ]
+}
+
+
+
+
 
 
 
