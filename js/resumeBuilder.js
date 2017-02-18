@@ -692,3 +692,64 @@ $(document).click(function(loc)
 
 //Adding google map
 $("#mapDiv").append(googleMap);
+
+
+
+
+//Check Relationship
+function getRelationship(x, y) {
+    // Your code goes here!
+    var num1=x;
+    var num2=y;
+    var flag1=flag2=0;
+    if (isNaN(num1)) 
+    {
+        flag1=1;
+        //console.log(num1+"is not a number");
+    }
+    if (isNaN(num2)) 
+    {
+        flag2=1;
+    }
+    if(flag1===0 && flag2 ===0 )
+    {
+        if(num1<num2)
+        {
+            return("<");
+        }
+        else
+            if (num1===num2) 
+            {
+                return("=");
+            }
+            else
+            {
+                return(">");
+            }
+    }
+    else
+        if (flag1===1 && flag2===0) 
+        {
+            return("Can\'t compare relationships because "+num1+ " is not a number");
+        }
+        else
+        if (flag1===0 && flag2===1) 
+        {
+            return("Can\'t compare relationships because "+num2+ " is not a number");
+        }
+        else
+        if (flag1===1 && flag2===1) 
+        {
+            return("Can\'t compare relationships because "+num1+"  and  "+num2+ " are not numbers");
+        }
+}
+
+// Try logging these functions to test your code!
+console.log(getRelationship(1,4));
+console.log(getRelationship(1,1));
+console.log(getRelationship("that",2));
+console.log(getRelationship("this"," something else"));
+console.log(getRelationship(3));
+console.log(getRelationship("hi"));
+console.log(getRelationship(NaN));
+console.log(getRelationship(NaN, undefined));
