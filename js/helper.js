@@ -126,7 +126,7 @@ function initializeMap()
   {
    disableDefaultUI: false,
    center:new google.maps.LatLng(12.919607,77.612949),
-    zoom:13,
+    zoom:5,
   };
 
   /*
@@ -136,69 +136,45 @@ function initializeMap()
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
+
+
+
+
+
 //Create Marker with icon
-function createWorkMarker()
-{
-	console.log(work.jobs.length);
-
-	for(i=0;i<work.jobs.length;i++)
-	{
-		var icon = 
-	{
-    url: "http://icon-park.com/imagefiles/location_map_pin_home_navy_blue.png", // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-    origin: new google.maps.Point(0,0), // origin
-    anchor: new google.maps.Point(0, 0) // anchor
-	};
-
-
-var marker=new google.maps.Marker(
-{
-  position:new google.maps.LatLng(work.jobs[i].locationLat,work.jobs[i].locationLong),
-  icon:icon
-  }); 
-
-marker.setMap(map);
-
-	}
-	
-}
-
 createWorkMarker();
-
-
-
-function createHomeMarker()
-{
-	//console.log(work.jobs.length);
-
-	//for(i=0;i<work.jobs.length;i++)
-	
-		var icon = 
-	{
-    url: "http://www.clker.com/cliparts/y/p/H/C/E/V/green-home-icon-md.png", // url
-    scaledSize: new google.maps.Size(70, 70), // scaled size
-    origin: new google.maps.Point(0,0), // origin
-    anchor: new google.maps.Point(0, 0) // anchor
-	};
-
-
-var marker=new google.maps.Marker(
-{
-	//console.log(mbio.contcacts.locationLat);
-  position:new google.maps.LatLng(mbio.contcacts.locationLat,mbio.contcacts.locationLong),
-  icon:icon
-  }); 
-
-marker.setMap(map);
-
-	
-	
-}
-
 createHomeMarker();
+createEducationMarker();
+
+//setInfoWindow();
 
 
+
+
+
+
+
+
+
+
+
+
+
+/*
+//Handle marker click event
+
+//Open an InfoWindow When Clicking on The Marker
+
+
+
+var infowindow = new google.maps.InfoWindow({
+  content:"Nikhil's Home"
+  });
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
+*/
 
 
   
@@ -207,7 +183,166 @@ createHomeMarker();
 
  
 
+}//End of initializeMap
+
+
+var marker=[];
+function setInfoWindow()
+{
+  var infowindow = new google.maps.InfoWindow({
+  content:"Nikhil Residence3"
+  });
+
+infowindow.open(map,marker);
 }
+
+
+//Define markers icons etc
+
+function createWorkMarker()
+{
+  console.log(work.jobs.length);
+
+  for(i=0;i<work.jobs.length;i++)
+  {
+    var icon = 
+  {
+    url: "http://icon-park.com/imagefiles/location_map_pin_home_navy_blue.png", // url
+    scaledSize: new google.maps.Size(50, 50), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+  };
+
+
+  marker[i]=new google.maps.Marker(
+{
+  position:new google.maps.LatLng(work.jobs[i].locationLat,work.jobs[i].locationLong),
+  icon:icon
+  }); 
+
+///Set infoWindow
+
+
+/*
+var infowindow = new google.maps.InfoWindow({
+  content:work.jobs[i].employer;
+  });
+
+infowindow.open(map,marker); */
+
+marker[i].setMap(map);
+
+//setInfoWindow(i);
+
+
+  }
+
+
+//set info Window
+for(i=0;i<work.jobs.length;i++)
+{
+  var infowindow = new google.maps.InfoWindow({
+  content:"Company : "+work.jobs[i].employer
+  });
+
+infowindow.open(map,marker[i]);
+}
+
+  
+}//end of createWorkMarker
+
+/*function setInfoWindow(j)
+{
+  console.log("hi from set Info window"+work.jobs[j].employer);
+}*/
+
+
+
+function createHomeMarker()
+{
+  //console.log(work.jobs.length);
+
+  //for(i=0;i<work.jobs.length;i++)
+  
+    var icon = 
+  {
+    url: "http://www.clker.com/cliparts/y/p/H/C/E/V/green-home-icon-md.png", // url
+    scaledSize: new google.maps.Size(70, 70), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+  };
+
+
+var marker=new google.maps.Marker(
+{
+  //console.log(mbio.contcacts.locationLat);
+  position:new google.maps.LatLng(mbio.contcacts.locationLat,mbio.contcacts.locationLong),
+  icon:icon
+  }); 
+
+marker.setMap(map);
+
+
+//set infoWindow
+
+var infowindow = new google.maps.InfoWindow({
+  content:"Home Address :Athidhi Homes , BTM "
+  });
+
+infowindow.open(map,marker);
+  
+  
+}//end of createHomeMarker
+
+
+
+function createEducationMarker()
+{
+  console.log("Total School = "+education.schools.length);
+
+  for(i=0;i<education.schools.length;i++)
+  {
+console.log("Total School = "+education.schools.length);
+
+    var icon = 
+  
+  {
+    url: "https://cdn4.iconfinder.com/data/icons/maps-and-navigation-solid-icons-vol-1/72/22-512.png", // url
+    scaledSize: new google.maps.Size(70, 70), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+  };
+
+
+ marker[i]=new google.maps.Marker(
+{
+  //console.log(mbio.contcacts.locationLat);
+  position:new google.maps.LatLng(education.schools[i].locationLat,education.schools[i].locationLong),
+  icon:icon
+  }); 
+
+marker[i].setMap(map);
+
+  }
+
+// set info window for education
+  for(i=0;i<education.schools.length;i++)
+  {
+    var infowindow = new google.maps.InfoWindow({
+  content:education.schools[i].name
+  });
+
+infowindow.open(map,marker[i]);
+  }
+
+
+  
+}//end of createEducationMarker
+
+
+
+
+
 
 /*
 Uncomment the code below when you're ready to implement a Google Map!

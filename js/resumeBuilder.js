@@ -296,7 +296,7 @@ var mprojects=
 var mbio=
 {
 
-    "name":"Nikhil",
+    "name":"Nikhilesh Tripathi",
     "role":"Frontend Developer",
     "welcome_msg":"Want to become tech bird",
     "biopic":"https://mapta.gs/map_image/image2016-11-10-05-33-0958240695c00164.51374152.png",
@@ -338,7 +338,7 @@ $("#header").append(formattedEmail);
 var formattedGithub=HTMLgithub.replace("%data%",mbio.contcacts.github);
 $("#header").append(formattedGithub);
 
-var formattedLocation=HTMLlocation.replace("%data%",mbio.contcacts.location);
+var formattedLocation=HTMLlocation.replace("%data%","Bengaluru");
 $("#header").append(formattedLocation);
 
 var formattedbioPic=HTMLbioPic.replace("%data%",mbio.biopic);
@@ -391,7 +391,9 @@ var education={
     "schools":[
     {
         "name":"United College of Engineering and Research,Naini , Allahabad",
-        "location":"https://www.google.co.in/maps/dir/''/''/@25.3431277,81.8401268,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3985497f84146b21:0xaca81f605417ff44!2m2!1d81.9101671!2d25.3431443",
+        
+        "locationLat":"25.343153",
+        "locationLong":"81.910157",
         "degree_dates":"2012-2015",
         "degree":"B.Tech",
         "url":"",
@@ -399,7 +401,9 @@ var education={
     },
     {
         "name":"RRCITM ,Chandaus,Aligarh",
-        "location":"https://www.google.co.in/maps/dir/''/''/@25.3431277,81.8401268,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3985497f84146b21:0xaca81f605417ff44!2m2!1d81.9101671!2d25.3431443",
+        
+        "locationLat":"28.084163",
+        "locationLong":"77.833646",
         "degree_dates":"2009-2012",
         "degree":"3 Year Diploma",
         "url":"",
@@ -407,7 +411,9 @@ var education={
     },
     {
         "name":"PRT Inter College, Rohi,Sant Ravidas Nagar",
-        "location":"https://www.google.co.in/maps/dir/''/''/@25.3431277,81.8401268,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3985497f84146b21:0xaca81f605417ff44!2m2!1d81.9101671!2d25.3431443",
+        "locationLat":"25.388007",
+        "locationLong":"82.333986",
+        
         "degree_dates":"2008-2009",
         "degree":"10th",
         "url":"",
