@@ -99,6 +99,13 @@ logClicks(x1,y1);
 
 
 
+
+
+
+
+
+
+
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.
 See the documentation below for more details.
@@ -119,7 +126,7 @@ function initializeMap()
   {
    disableDefaultUI: false,
    center:new google.maps.LatLng(12.919607,77.612949),
-    zoom:10,
+    zoom:13,
   };
 
   /*
@@ -130,165 +137,75 @@ function initializeMap()
 
 
 //Create Marker with icon
-function createMarker()
+function createWorkMarker()
 {
-	var icon = {
-    url: "http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-4/256/home-icon.png", // url
-    scaledSize: new google.maps.Size(30, 30), // scaled size
+	console.log(work.jobs.length);
+
+	for(i=0;i<work.jobs.length;i++)
+	{
+		var icon = 
+	{
+    url: "http://icon-park.com/imagefiles/location_map_pin_home_navy_blue.png", // url
+    scaledSize: new google.maps.Size(50, 50), // scaled size
     origin: new google.maps.Point(0,0), // origin
     anchor: new google.maps.Point(0, 0) // anchor
-};
+	};
 
 
-var marker=new google.maps.Marker({
-  position:new google.maps.LatLng(12.919607,77.612949),
+var marker=new google.maps.Marker(
+{
+  position:new google.maps.LatLng(work.jobs[i].locationLat,work.jobs[i].locationLong),
   icon:icon
   }); 
 
 marker.setMap(map);
+
+	}
+	
 }
 
-createMarker();
+createWorkMarker();
 
-  /*
-  locationFinder() returns an array of every location string from the JSONs
-  written for bio, education, and work.
-  */
 
-  /*
-  function locationFinder() 
-  {
 
-    // initializes an empty array
-    var locations = [];
+function createHomeMarker()
+{
+	//console.log(work.jobs.length);
 
-    // adds the single location property from bio to the locations array
-    locations.push(mbio.contcacts.location);
-    console.log(mbio.contcacts.location);
+	//for(i=0;i<work.jobs.length;i++)
+	
+		var icon = 
+	{
+    url: "http://www.clker.com/cliparts/y/p/H/C/E/V/green-home-icon-md.png", // url
+    scaledSize: new google.maps.Size(70, 70), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+	};
 
-    // iterates through school locations and appends each location to
-    // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide:
-    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    /*education.schools.forEach(function(school){
-      locations.push(school.location);
-    });*/
 
-    // iterates through work locations and appends each location to
-    // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide:
-    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    /*work.jobs.forEach(function(job){
-      locations.push(job.location);
-    });*/
-   /* console.log(locations);
-    return locations;
-    
-  }
+var marker=new google.maps.Marker(
+{
+	//console.log(mbio.contcacts.locationLat);
+  position:new google.maps.LatLng(mbio.contcacts.locationLat,mbio.contcacts.locationLong),
+  icon:icon
+  }); 
 
-  */ //End of location finder
+marker.setMap(map);
 
-  /*
-  createMapMarker(placeData) reads Google Places search results to create map pins.
-  placeData is the object returned from search results containing information
-  about a single location.
-  */
-  /*
-  function createMapMarker(placeData) 
-  {
+	
+	
+}
 
-    // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.lat();  // latitude from the place service
-    var lon = placeData.geometry.location.lng();  // longitude from the place service
-    var name = placeData.formatted_address;   // name of the place from the place service
-    var bounds = window.mapBounds;            // current boundaries of the map window
+createHomeMarker();
 
-    // marker is an object with additional data about the pin for a single location
-    var marker = new google.maps.Marker(
-    {
-      map: map,
-      position: placeData.geometry.location,
-      title: name
-    });
 
-    // infoWindows are the little helper windows that open when you click
-    // or hover over a pin on a map. They usually contain more information
-    // about a location.
-    var infoWindow = new google.maps.InfoWindow(
-    {
-      content: name
-    });
 
-    // hmmmm, I wonder what this is about...
-    google.maps.event.addListener(marker, 'click', function() 
-    {
-      // your code goes here!
-    });
 
-    // this is where the pin actually gets added to the map.
-    // bounds.extend() takes in a map location object
-    bounds.extend(new google.maps.LatLng(lat, lon));
-    // fit the map to the new marker
-    map.fitBounds(bounds);
-    // center the map
-    map.setCenter(bounds.getCenter());
-  }
-*/
-  //End createMapMarker
-
-  /*
-  callback(results, status) makes sure the search returned results for a location.
-  If so, it creates a new map marker for that location.
-  */
-  /*
-  function callback(results, status) 
-  {
-    if (status == google.maps.places.PlacesServiceStatus.OK) 
-    {
-      console.log("I am inside callback");
-      createMapMarker(results[0]);
-    }
-  }
-
-  */
-
-  /*
-  pinPoster(locations) takes in the array of locations created by locationFinder()
-  and fires off Google place searches for each location
-  *//*
-  function pinPoster(locations) 
-  {
-
-    // creates a Google place search service object. PlacesService does the work of
-    // actually searching for location data.
-    var service = new google.maps.places.PlacesService(map);
-
-    // Iterates through the array of locations, creates a search object for each location
-      locations.forEach(function(place)
-      {
-      // the search request object
-      var request = 
-      {
-        query: place
-      };
-
-      // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search.
-      console.log("I am inside pinposter"+request);
-      service.textSearch(request, callback);
-    });
-  }*/
-  //End of pin poster 
-
+  
   // Sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
 
-  // locations is an array of location strings returned from locationFinder()
-  //locations = locationFinder();
-
-  // pinPoster(locations) creates pins on the map for each location in
-  // the locations array
-  //pinPoster(locations);
+ 
 
 }
 

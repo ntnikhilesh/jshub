@@ -253,19 +253,23 @@ var education={
 
 //work object
 
-var work={
-    "jobs":[
+var work=
+{
+    "jobs":
+    [
     {
         "employer":"Maptags",
         "title":"Android Developer",
-        "location":"https://www.google.co.in/maps/dir/''/''/@12.9403247,77.5518055,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3bae14467f27877f:0xcb2e37d776ee06a5!2m2!1d77.621846!2d12.940334",
+        "locationLat":"12.940334",
+        "locationLong":"77.621846",
         "dates":"Feb 2016 to Jan 2017",
         "description":"Was responsible for app testing, code comenting, UI design etc"
     },
     {
         "employer":"Cognitiveclouds",
         "title":"Frontend Developer",
-        "location":"https://www.google.co.in/maps/dir/''/''/@12.9105267,77.4791745,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3bae3fcfc7b7396b:0x8db2f50f20a999c6!2m2!1d77.549215!2d12.910536",
+        "locationLat":"12.910536",
+        "locationLong":"77.549215",
         "dates":"Feb 2017 to Future",
         "description":"Getting the hang of js. Learning basics and JSON, DOM etc. Trying to crack Udacity JavaScript Course. Solving quiz and teting lot of basic things."
     }
@@ -273,8 +277,10 @@ var work={
 }
 
 
-var mprojects={
-    "projects":[
+var mprojects=
+{
+    "projects":
+    [
     {
         "title":"Maptags app",
         "dates":"Feb 2016 to Jan 2017",
@@ -287,17 +293,21 @@ var mprojects={
 
 //bio object is on top
 
-var mbio={
+var mbio=
+{
+
     "name":"Nikhil",
     "role":"Frontend Developer",
     "welcome_msg":"Want to become tech bird",
     "biopic":"https://mapta.gs/map_image/image2016-11-10-05-33-0958240695c00164.51374152.png",
     
-    "contcacts":{
+    "contcacts":
+    {
         "mobile":"+91 9453363771",
         "email":"nikhilesh.tripathi@cognitiveclouds.com",
         "github":"nikhil636",
-        "location":"https://www.google.co.in/maps/dir/12.9205759,77.6138742/12.9204911,77.6138716/@12.9195982,77.6118519,18z/data=!4m2!4m1!3e0"
+        "locationLat":"12.920542",
+        "locationLong":"77.613736"
 
     },
     
