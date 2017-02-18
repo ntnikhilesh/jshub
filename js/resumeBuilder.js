@@ -697,7 +697,7 @@ $("#mapDiv").append(googleMap);
 
 
 //Check Relationship
-function getRelationship(x, y) {
+/*function getRelationship(x, y) {
     // Your code goes here!
     var num1=x;
     var num2=y;
@@ -752,4 +752,4 @@ console.log(getRelationship("this"," something else"));
 console.log(getRelationship(3));
 console.log(getRelationship("hi"));
 console.log(getRelationship(NaN));
-console.log(getRelationship(NaN, undefined));
+console.log(getRelationship(NaN, undefined)); */
