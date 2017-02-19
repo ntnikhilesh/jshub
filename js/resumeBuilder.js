@@ -258,21 +258,22 @@ var work=
     "jobs":
     [
     {
-        "employer":"Maptags",
-        "title":"Android Developer",
-        "locationLat":"12.940334",
-        "locationLong":"77.621846",
-        "dates":"Feb 2016 to Jan 2017",
-        "description":"Was responsible for app testing, code comenting, UI design etc"
-    },
-    {
         "employer":"Cognitiveclouds",
         "title":"Frontend Developer",
         "locationLat":"12.910536",
         "locationLong":"77.549215",
         "dates":"Feb 2017 to Future",
         "description":"Getting the hang of js. Learning basics and JSON, DOM etc. Trying to crack Udacity JavaScript Course. Solving quiz and teting lot of basic things."
+    },
+    {
+        "employer":"Maptags",
+        "title":"Android Developer",
+        "locationLat":"12.940334",
+        "locationLong":"77.621846",
+        "dates":"Feb 2016 to Jan 2017",
+        "description":"Was responsible for app testing, code comenting, UI design etc"
     }
+    
     ]
 }
 
@@ -317,6 +318,7 @@ var mbio=
 
 
 document.getElementById("header").style.backgroundImage = "url('http://i.imgur.com/f2aWgVg.jpg')";
+//document.getElementById("lets-connect").style.backgroundImage = "url('http://i.imgur.com/knWYrMz.jpg')";
 
 
 
@@ -333,20 +335,21 @@ var formattedRole=HTMLheaderRole.replace("%data%",mbio.role);
 $("#header").append(formattedRole);
 
 var formattedMobile=HTMLmobile.replace("%data%",mbio.contcacts.mobile);
-//$("#header").append(formattedMobile);
+$("#header").append(formattedMobile);
+$("#lets-connect").append("<br/>"+formattedMobile);
 
 var formattedEmail=HTMLemail.replace("%data%",mbio.contcacts.email);
-$("#header").append(formattedMobile+""+formattedEmail);
-$("#lets-connect").append(formattedMobile+""+formattedEmail);
+$("#header").append(formattedEmail);
+$("#lets-connect").append("<br/>"+formattedEmail);
 
 
 var formattedGithub=HTMLgithub.replace("%data%",mbio.contcacts.github);
 $("#header").append(formattedGithub);
-$("#lets-connect").append(formattedGithub);
+$("#lets-connect").append("<br/>"+formattedGithub);
 
 var formattedLocation=HTMLlocation.replace("%data%","Bengaluru");
 $("#header").append(formattedLocation);
-$("#lets-connect").append(formattedLocation);
+$("#lets-connect").append("<br/>"+formattedLocation);
 
 var formattedbioPic=HTMLbioPic.replace("%data%",mbio.biopic);
 $("#header").append(formattedbioPic);
