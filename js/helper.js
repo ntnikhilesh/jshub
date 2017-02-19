@@ -13,7 +13,7 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderRole = '<span class="white-text">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -125,7 +125,7 @@ function initializeMap()
   var mapOptions = 
   {
    disableDefaultUI: false,
-   center:new google.maps.LatLng(12.919607,77.612949),
+   center:new google.maps.LatLng(work.jobs[1].locationLat,work.jobs[1].locationLong),
     zoom:5,
   };
 
@@ -146,36 +146,6 @@ createWorkMarker();
 createHomeMarker();
 createEducationMarker();
 
-//setInfoWindow();
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//Handle marker click event
-
-//Open an InfoWindow When Clicking on The Marker
-
-
-
-var infowindow = new google.maps.InfoWindow({
-  content:"Nikhil's Home"
-  });
-
-google.maps.event.addListener(marker, 'click', function() {
-  infowindow.open(map,marker);
-  });
-*/
-
 
   
   // Sets the boundaries of the map based on pin locations
@@ -185,6 +155,8 @@ google.maps.event.addListener(marker, 'click', function() {
 
 }//End of initializeMap
 
+
+//Set Info windowSS
 
 var marker=[];
 function setInfoWindow()

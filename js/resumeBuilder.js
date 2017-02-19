@@ -305,15 +305,18 @@ var mbio=
     {
         "mobile":"+91 9453363771",
         "email":"nikhilesh.tripathi@cognitiveclouds.com",
-        "github":"nikhil636",
+        "github":"ntnikhilesh",
         "locationLat":"12.920542",
         "locationLong":"77.613736"
 
     },
     
-    "skills":["C ", "Java" , "JavaScript"]
+    "skills":["C ", "Java" , "Android","HTML","CSS","JavaScript"]
 
 }
+
+
+document.getElementById("header").style.backgroundImage = "url('http://i.imgur.com/f2aWgVg.jpg')";
 
 
 
@@ -330,16 +333,20 @@ var formattedRole=HTMLheaderRole.replace("%data%",mbio.role);
 $("#header").append(formattedRole);
 
 var formattedMobile=HTMLmobile.replace("%data%",mbio.contcacts.mobile);
-$("#header").append(formattedMobile);
+//$("#header").append(formattedMobile);
 
 var formattedEmail=HTMLemail.replace("%data%",mbio.contcacts.email);
-$("#header").append(formattedEmail);
+$("#header").append(formattedMobile+""+formattedEmail);
+$("#lets-connect").append(formattedMobile+""+formattedEmail);
+
 
 var formattedGithub=HTMLgithub.replace("%data%",mbio.contcacts.github);
 $("#header").append(formattedGithub);
+$("#lets-connect").append(formattedGithub);
 
 var formattedLocation=HTMLlocation.replace("%data%","Bengaluru");
 $("#header").append(formattedLocation);
+$("#lets-connect").append(formattedLocation);
 
 var formattedbioPic=HTMLbioPic.replace("%data%",mbio.biopic);
 $("#header").append(formattedbioPic);
@@ -443,15 +450,17 @@ for(i=0;i<education.schools.length;i++)
     
     var formattedschoolName=HTMLschoolName.replace("%data%",education.schools[i].name);
     $(".education-entry:last").append(formattedschoolName);
+
+    var formattedschoolDates=HTMLschoolDates.replace("%data%",education.schools[i].degree_dates);
+    $(".education-entry:last").append(formattedschoolDates);
     
     var formattedschoolDegree=HTMLschoolDegree.replace("%data%",education.schools[i].degree);
-    $(".education-entry:last").append(formattedschoolDegree);
+    $(".education-entry:last").append("<br/>"+formattedschoolDegree);
     
+
     var formattedschoolMajor=HTMLschoolMajor.replace("%data%",education.schools[i].majors);
     $(".education-entry:last").append(formattedschoolMajor);
     
-    var formattedschoolDates=HTMLschoolDates.replace("%data%",education.schools[i].degree_dates);
-    $(".education-entry:last").append(formattedschoolDates);
     
 
     }
